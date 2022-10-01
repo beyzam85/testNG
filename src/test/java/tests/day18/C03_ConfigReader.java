@@ -16,7 +16,7 @@ public class C03_ConfigReader {
 
         //test data username: manager ,  test data password : Manager1!
         //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test e
-        hotelMyCampPage .login.click();
+        hotelMyCampPage.login.click();
 
 
     }

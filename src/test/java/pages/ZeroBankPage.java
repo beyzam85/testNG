@@ -8,6 +8,9 @@ import utilities.Driver;
 import java.util.List;
 
 public class ZeroBankPage {
+
+
+
     public ZeroBankPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -16,7 +19,7 @@ public class ZeroBankPage {
     public WebElement signIn;
 
     @FindBy(xpath = "//input[@id='user_login']")
-     public WebElement login;
+     public WebElement loginBox;
 
     @FindBy(xpath = "//input[@id='user_password'")
     public WebElement password;
@@ -33,8 +36,15 @@ public class ZeroBankPage {
     @FindBy(xpath = "//a[text()='Purchase Foreign Currency']")
     public WebElement purForCur;
 
-    @FindBy(xpath = "//select[@id='pc_currency']") //check later
-    public List<WebElement> currencyDropDwon ;
+    @FindBy(xpath = "//select[@id='pc_currency']") //check later!!!
+    public List<WebElement> currencyDropDwoMenu ;
+
+    @FindBy(xpath = "//select[@id='pc_currency']") // check later!!!
+    public List<WebElement> currencyDropDwoMenuList;
+
+
+
+
 
 
 }
