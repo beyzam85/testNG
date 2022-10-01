@@ -18,27 +18,27 @@ public class HomeWork1 extends TestBaseBeforeClassAfterClass {
 
 
         //“http://zero.webappsecurity.com/” Adresine gidin
-        driver.get("http://zero.webappsecurity.com/");
+
 
         //Sign in butonuna basin
-        driver.findElement(By.xpath("//*[@id='signin_button']")).click();
+
 
         //Login kutusuna “username” yazin
-        driver.findElement(By.xpath("//input[@id='user_login']")).sendKeys("username");
+
 
         //Password kutusuna “password” yazin
-        driver.findElement(By.xpath("//input[@id='user_password']")).sendKeys("password");
+
 
         //Sign in tusuna basin
-        driver.findElement(By.xpath("//input[@value='Sign in']")).click();
-        driver.navigate().back();
 
-        //Online banking menusu icinde Pay Bills sayfasina gidin
-        driver.findElement(By.xpath("//*[text()='Online Banking'][1]")).click();
-        driver.findElement(By.xpath("//span[@id='pay_bills_link']")).click();
+
+        //*** bu site güvenli baglantı saaglayamıyor navigate().back komutu ile aşabiliriz.
+       driver.navigate().back();
+
+       //Online banking menusu icinde Pay Bills sayfasina gidin
 
         //“Purchase Foreign Currency” tusuna basin
-        driver.findElement(By.xpath("//*[@id=\"tabs\"]/ul/li[3]/a")).click();
+
 
         //“Currency” drop down menusunden Eurozone’u secin
         WebElement dropDown = driver.findElement(By.xpath("//select[@id='pc_currency']"));
@@ -48,6 +48,8 @@ public class HomeWork1 extends TestBaseBeforeClassAfterClass {
         SoftAssert softAssert = new SoftAssert();
         String actualDropDownTitle = dropDown.getAccessibleName();
         softAssert.assertNotEquals(actualDropDownTitle, "Eurozone (Euro)");
+
+        //soft assert kullanarak "Eurozone (Euro)" secildigini test edin
 
         //soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin
         // "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)",
