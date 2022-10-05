@@ -1,11 +1,11 @@
-package tests.day16;
+package tests.Odevler;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBaseBeforeClassAfterClass;
 
-public class HomeWork01 extends TestBaseBeforeClassAfterClass {
+public class day16_HomeWork03 extends TestBaseBeforeClassAfterClass {
     /*
     1) Bir class oluşturun: YoutubeAssertions
     2) https://www.youtube.com adresine gidin

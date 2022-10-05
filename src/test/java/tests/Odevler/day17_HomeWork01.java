@@ -1,4 +1,4 @@
-package tests.day17;
+package tests.Odevler;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HomeWork1 extends TestBaseBeforeClassAfterClass {
+public class day17_HomeWork01 extends TestBaseBeforeClassAfterClass {
 
     @Test
     public void test1() {
@@ -36,7 +36,7 @@ public class HomeWork1 extends TestBaseBeforeClassAfterClass {
         zeroBankPage.submitSignIn.click();
 
         //*** bu site güvenli baglantı saaglayamıyor navigate().back komutu ile aşabiliriz.
-        driver.navigate().back();
+        Driver.getDriver().navigate().back();
 
         //Online banking menusu icinde Pay Bills sayfasina gidin
         zeroBankPage.onlineBanking.click();
@@ -46,14 +46,14 @@ public class HomeWork1 extends TestBaseBeforeClassAfterClass {
         zeroBankPage.purForCur.click();
 
         //“Currency” drop down menusunden Eurozone’u secin
-        //Select select = new Select(ZeroBankPage.currencyDropDwoMenu);
-       // select.selectByVisibleText("Eurozone (euro)");
+        Select select = new Select(zeroBankPage.currencyDropDwoMenu);
+        select.selectByVisibleText("Eurozone (euro)");
+
         //soft assert kullanarak "Eurozone (Euro)" secildigini test edin
         SoftAssert softAssert = new SoftAssert();
-        //softAssert.assertEquals(select.getFirstSelectedOption().getText()."Eurozone(euro)");
+        softAssert.assertEquals(select.getFirstSelectedOption().getText(),"Eurozone (euro)");
 
         //soft assert kullanarak "Eurozone (Euro)" secildigini test edin "Select One";
-
         //soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin
         // "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)",
         // "China  (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)",
@@ -65,13 +65,11 @@ public class HomeWork1 extends TestBaseBeforeClassAfterClass {
         for (int i = 0; i < actualList.size(); i++) {
             expectedList.add(actualList.get(i));
         }
-        for (int i = 0; i < expectedList.size(); i++) {
-            softAssert.assertEquals(expectedList.get(i).getText(), actualList.get(i).getText());
+        softAssert.assertEquals(expectedList,actualList);
 
-            System.out.println(expectedList + "     ");
-            System.out.println(actualList.get(i).getText());
-
-        }
+     //for (int i = 0; i < expectedList.size(); i++) {
+     //    softAssert.assertEquals(expectedList.get(i).getText(), actualList.get(i).getText());
+     //}
         softAssert.assertAll();
     }
 }

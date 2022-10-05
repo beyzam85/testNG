@@ -27,7 +27,7 @@ public class Driver {
          */
 
             public static WebDriver getDriver() {
-        if (driver == null) {//coklu
+        if (driver == null) {//coklupencere acmamak için
             switch (ConfigReader.getProperty("browser")){
                 case "edge" :
                     WebDriverManager.edgedriver().setup();

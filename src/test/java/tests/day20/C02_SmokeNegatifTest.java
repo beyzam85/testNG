@@ -5,7 +5,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelMyCampPage;
-import tests.day16.HomeWork;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -21,7 +20,7 @@ public class C02_SmokeNegatifTest {
         //test data username: manager1 ,  test data password : manager1!
         hotelMyCampPage.userName.sendKeys(ConfigReader.getProperty("hmcWrongUser"));
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("password"))
+        actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hmcPassword"))
                 .sendKeys(Keys.ENTER).perform();
         //Degerleri girildiginde sayfaya girilemedigini test et
         Assert.assertTrue(hotelMyCampPage.girisYapilamadi.isDisplayed());
@@ -29,19 +28,24 @@ public class C02_SmokeNegatifTest {
         Driver.closeDriver();
     }
     @Test
-    public void yanlisSifre() { //2.Seneryo: Doğru kullanıcı, Yanlış Şifre
+    public void yanlisSifre() { //2.Senaryo: Doğru kullanıcı, Yanlış Şifre
+
         // https://www.hotelmycamp.com/ adresine git
         Driver.getDriver().get(ConfigReader.getProperty("hmcUrl"));
         HotelMyCampPage hotelMyCampPage = new HotelMyCampPage();
+
         //login butonuna bas
         hotelMyCampPage.login.click();
+
         //test data username: manager1 ,  test data password : manager1!
-        hotelMyCampPage.userName.sendKeys(ConfigReader.getProperty("user"));
+        hotelMyCampPage.userName.sendKeys(ConfigReader.getProperty("hmcUserName"));
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hmcWrongPass"))
                 .sendKeys(Keys.ENTER).perform();
+
         //Degerleri girildiginde sayfaya girilemedigini test et
         Assert.assertTrue(hotelMyCampPage.girisYapilamadi.isDisplayed());
+
         //Sayfayı kapatınız
         Driver.closeDriver();
     }

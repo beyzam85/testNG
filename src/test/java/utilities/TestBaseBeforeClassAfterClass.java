@@ -22,7 +22,7 @@ public abstract class TestBaseBeforeClassAfterClass {
     // TestNG framework'unde @Before QAfter notasyonları yerine @BeforeMethod ve @AfterMethod kullanılır
     // çalışmaprensibi JUnitteki @Before, @After ile aynıdır
 
-    @BeforeClass
+    @BeforeClass(groups = "gp1")
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();

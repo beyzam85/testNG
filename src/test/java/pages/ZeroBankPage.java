@@ -21,7 +21,7 @@ public class ZeroBankPage {
     @FindBy(xpath = "//input[@id='user_login']")
      public WebElement loginBox;
 
-    @FindBy(xpath = "//input[@id='user_password'")
+    @FindBy(xpath = "//input[@id='user_password']")
     public WebElement password;
 
     @FindBy(xpath = "//input[@name='submit']")
@@ -37,14 +37,10 @@ public class ZeroBankPage {
     public WebElement purForCur;
 
     @FindBy(xpath = "//select[@id='pc_currency']") //check later!!!
-    public List<WebElement> currencyDropDwoMenu ;
+    public WebElement currencyDropDwoMenu ;
 
     @FindBy(xpath = "//select[@id='pc_currency']") // check later!!!
     public List<WebElement> currencyDropDwoMenuList;
-
-
-
-
 
 
 }

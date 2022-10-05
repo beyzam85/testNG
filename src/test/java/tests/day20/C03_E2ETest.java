@@ -22,10 +22,12 @@ public class C03_E2ETest {
         HotelMyCampPage hotelMyCampPage = new HotelMyCampPage();
         hotelMyCampPage.login.click();
 
+
         //Username textbox ve password metin kutularını locate edin ve asagidaki verileri
         //Username : manager
         //Password  : Manager1!
         //Login butonuna tıklayın.
+
         hotelMyCampPage.userName.sendKeys(ConfigReader.getProperty("user"));
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("password")).

@@ -1,4 +1,4 @@
-package tests.day16;
+package tests.Odevler;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBaseBeforeClassAfterClass;
 
-public class HomeWork extends TestBaseBeforeClassAfterClass {
+public class day16_HomeWork01 extends TestBaseBeforeClassAfterClass {
 
 
 

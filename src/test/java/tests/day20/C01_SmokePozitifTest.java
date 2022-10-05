@@ -23,9 +23,9 @@ public class C01_SmokePozitifTest {
 
         //test data username: manager ,
         //test data password : Manager1!
-        hotelMyCampPage.userName.sendKeys(ConfigReader.getProperty("user"));
+        hotelMyCampPage.userName.sendKeys(ConfigReader.getProperty("hmcUserName"));
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("password"))
+        actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hmcPassword"))
                 .sendKeys(Keys.ENTER).perform();
 
         //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et

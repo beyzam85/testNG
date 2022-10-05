@@ -1,4 +1,4 @@
-package tests.day16;
+package tests.Odevler;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBaseBeforeClassAfterClass;
 
-public class day16_Odev extends TestBaseBeforeClassAfterClass {
+public class day16_HomeWork02 extends TestBaseBeforeClassAfterClass {
     // 3) Aşağıdaki adları kullanarak 4 test metodu oluşturun ve gerekli testleri yapin
     // 1) Bir class oluşturun: YoutubeAssertions
     // 2) "https://www.youtube.com" adresini gidin
