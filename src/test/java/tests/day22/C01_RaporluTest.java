@@ -19,23 +19,25 @@ public class C01_RaporluTest extends TestBaseRapor {
     -Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
      */
 
+
     @Test
     public void test01() {
         extentTest=extentReports.createTest("Pozitif Test","Geçerli kullanıcı adı ve password ile giriş yapıldı");
+
         //-https://www.bluerentalcars.com/ adresine git
         Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
         extentTest.info("Blue RentaCar sitesine gidildi");
 
-       //-login butonuna bas
-        BlueRentalCarPage blueRentalCarPage = new BlueRentalCarPage();
-        blueRentalCarPage.login.click();
+        //-login butonuna bas
+        BlueRentalCarPage brc = new BlueRentalCarPage();
+        brc.login.click();
         extentTest.info("login butonuna basıldı");
 
         //-test data user email: customer@bluerentalcars.com ,
         //-test data password : 12345 dataları girip login e basın
-
         //-login butonuna tiklayin
-        blueRentalCarPage.emailAdres.sendKeys(ConfigReader.getProperty("userEmail"));
+
+        brc.emailAdres.sendKeys(ConfigReader.getProperty("userEmail"));
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("pass"))
                 .sendKeys(Keys.ENTER).perform();
@@ -43,7 +45,7 @@ public class C01_RaporluTest extends TestBaseRapor {
         extentTest.info("Ikinci login butonuna basıldı");
 
         //-Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
-        String actualUserName = blueRentalCarPage.oturumAcildi.getText();
+        String actualUserName = brc.oturumAcildi.getText();
         String expectedUserName = "John Walker";
         Assert.assertEquals(expectedUserName,actualUserName);
         extentTest.pass("Sayfaya basarili sekilde girildi");
