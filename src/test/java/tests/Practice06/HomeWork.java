@@ -1,4 +1,4 @@
-package Practice06;
+package tests.Practice06;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
