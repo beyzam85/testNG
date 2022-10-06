@@ -25,21 +25,25 @@ public class C01_RaporluTest extends TestBaseRapor {
         //-https://www.bluerentalcars.com/ adresine git
         Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
         extentTest.info("Blue RentaCar sitesine gidildi");
-        //-login butonuna bas
+
+       //-login butonuna bas
         BlueRentalCarPage blueRentalCarPage = new BlueRentalCarPage();
-        blueRentalCarPage.brclogin.click();
+        blueRentalCarPage.login.click();
         extentTest.info("login butonuna basıldı");
+
         //-test data user email: customer@bluerentalcars.com ,
         //-test data password : 12345 dataları girip login e basın
+
         //-login butonuna tiklayin
-        blueRentalCarPage.userEmail.sendKeys(ConfigReader.getProperty("userEmail"));
+        blueRentalCarPage.emailAdres.sendKeys(ConfigReader.getProperty("userEmail"));
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("pass"))
                 .sendKeys(Keys.ENTER).perform();
         extentTest.info("Doğru kullanıcı email ve password girildi");
         extentTest.info("Ikinci login butonuna basıldı");
+
         //-Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
-        String actualUserName = blueRentalCarPage.basariliGiris.getText();
+        String actualUserName = blueRentalCarPage.oturumAcildi.getText();
         String expectedUserName = "John Walker";
         Assert.assertEquals(expectedUserName,actualUserName);
         extentTest.pass("Sayfaya basarili sekilde girildi");

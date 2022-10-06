@@ -34,7 +34,7 @@ public class ReusableMethods {
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         // TakesScreenshot is an interface of selenium that takes the screenshot
         File source = element.getScreenshotAs(OutputType.FILE);
-        // full path to the screenshot location
+        // full path to the screenshot location //user.dir içinde oldugum sayfayı gosterir.
         String wElementSS = System.getProperty("user.dir") + "/target/WElementScreenshots/" + name + date + ".png";
         File finalDestination = new File(wElementSS);
         // save the screenshot to the path given
@@ -129,4 +129,6 @@ public class ReusableMethods {
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
     }
-}
+
+
+    }

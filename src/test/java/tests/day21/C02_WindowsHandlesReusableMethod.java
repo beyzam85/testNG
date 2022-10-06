@@ -16,6 +16,7 @@ public class C02_WindowsHandlesReusableMethod {
         //● Click Here butonuna basın.
         ReusableMethods.waitFor(3);
         Driver.getDriver().findElement(By.xpath("//*[text()='Click Here']")).click();
+
         // acilan yeni tab'in title'inin "New Window" oldugunu test edin
         ArrayList<String> pencereler = new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(pencereler.get(1));
@@ -33,6 +34,7 @@ public class C02_WindowsHandlesReusableMethod {
         Driver.getDriver().findElement(By.xpath("//*[text()='Click Here']")).click();
         // acilan yeni tab'in title'inin "New Window" oldugunu test edin
         ReusableMethods.switchToWindow("New Window");
+
         String expectedTitle = "New Window";
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
