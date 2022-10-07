@@ -9,9 +9,6 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C01_DataProvider {
-
-
-
     @Test
     public void test01() {
         AmazonPage amazonPage = new AmazonPage();
@@ -25,12 +22,11 @@ public class C01_DataProvider {
         Assert.assertTrue(actualKelime.contains(expectedKelime));
         Driver.closeDriver();
     }
+
     @DataProvider
     public static Object[][] aranacakKelimeler() {
         return new Object[][]{{"java"},{"selenium"},{"samsung"},{"iphone"}};
     }
-
-
     @Test(dataProvider = "aranacakKelimeler")
     public void test02(String kelimeler) {
 
@@ -44,10 +40,9 @@ public class C01_DataProvider {
         String expectedKelime = "Nutella";
         String actualKelime = amazonPage.aramaSonucWE.getText();
     }
-        @Test(dependsOnMethods = "test02")
+        @Test(dependsOnMethods = "test02") //class seviyesinde calısır
         public void test03() {
         //sayfayi kapatalim
-            Driver.closeDriver();
-
-}
+            Driver.quitDriver();
+    }
 }
