@@ -1,4 +1,4 @@
-package tests.Practice09;
+package tests.Practice08.Practice09;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;

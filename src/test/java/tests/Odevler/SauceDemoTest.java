@@ -17,6 +17,7 @@ public class SauceDemoTest {
         Driver.getDriver().get(ConfigReader.getProperty("scdmUrl"));
         //     * Enter the username  as standard_user
         SauceDemoPage sauceDemoPage = new SauceDemoPage();
+
         sauceDemoPage.userName.sendKeys(ConfigReader.getProperty("scdmUserName"));
 
         //     * Enter the password as   secret_sauce

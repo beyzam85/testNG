@@ -1,8 +1,11 @@
 package tests.day21;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
 import pages.AmazonPage;
+import tests.log4J.Log4jTest1;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -10,6 +13,7 @@ import utilities.ReusableMethods;
 import java.io.IOException;
 
 public class C01_ScreenShotReuableMethod {
+
     @Test
     public void test01() throws IOException {
         //hepsiburada sayfasına gidiniz

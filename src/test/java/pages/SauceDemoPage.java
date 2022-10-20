@@ -23,6 +23,8 @@ public class SauceDemoPage {
         @FindBy (className = "product_sort_container")
         public WebElement ddm;
 
+        @FindBy(xpath = "//*[@id='login-button']")
+        public WebElement loginButton;
 }
 
 
